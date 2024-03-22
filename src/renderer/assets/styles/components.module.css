@@ -1,0 +1,198 @@
+.btn {
+    width: auto;
+    height: 14rem;
+    padding: 0 8rem;
+    gap: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    background: var(--theme-second-item-bg);
+    border-radius: 3rem;
+
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--theme-second-item-color);
+    overflow: hidden;
+
+    transition: 0.2 all ease-in-out;
+
+    user-select: none;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn:active {
+    opacity: 0.7;
+}
+
+.btn.btnFill {
+    flex: 1 1 auto;
+}
+
+.btn.btnCube {
+    width: 14rem !important;
+    padding: 0;
+}
+
+.btn.btnDefault {
+    background: rgba(0, 0, 0, 0.2) !important;
+    color: #fff !important;
+}
+
+.btn.btnPrimary {
+    background: #ff4600 !important;
+    color: #fff !important;
+}
+
+.btn.btnSuccess {
+    background: var(--toastify-color-success) !important;
+    color: #fff !important;
+}
+
+.btn.btnInfo {
+    background: var(--toastify-color-info) !important;
+    color: #fff !important;
+}
+
+.btn.btnWarning {
+    background: var(--toastify-color-warning) !important;
+    color: #fff !important;
+}
+
+.btn.btnDanger {
+    background: var(--toastify-color-error) !important;
+    color: #fff !important;
+}
+
+.btn.btnDisabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn.btnDisabled:hover {
+    opacity: 0.5;
+}
+
+.btn.btnDisabled:active {
+    opacity: 0.5;
+}
+
+.form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    padding: 4rem 0;
+}
+
+.formTitle {
+    font-size: 10rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+}
+
+.formGroup {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.inputGroup {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+}
+
+.inputMain {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow: hidden;
+}
+
+.inputMain.row {
+    flex-direction: row;
+}
+
+.inputMain.fill {
+    flex: 1 1 auto;
+}
+
+.inputMain label {
+    font-size: 3.3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.inputContainer {
+    width: auto;
+    height: 14rem;
+    background: transparent;
+    border-radius: 3rem;
+    display: flex;
+    flex: 1 1 auto;
+    background: rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+.inputContainer input {
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    background: none;
+    color: white;
+    font-size: 4.4rem;
+    font-weight: 400;
+    line-height: 1;
+    overflow: hidden;
+    padding: 0 4rem;
+}
+
+.inputContainer input::-webkit-inner-spin-button,
+.inputContainer input::-webkit-outer-spin-button {
+    display: none;
+}
+
+.seePassword {
+    position: absolute;
+    right: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seePassword svg {
+    width: 6rem;
+    height: 6rem;
+    fill: rgba(255, 255, 255, 0.6);
+}
+
+.seePassword svg:hover {
+    opacity: 0.7;
+}
+
+.seePassword svg:active {
+    opacity: 0.5;
+}
+
+.icon {
+    width: 4rem;
+    height: 4rem;
+    fill: #fff;
+}

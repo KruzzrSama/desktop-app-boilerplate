@@ -14,8 +14,8 @@ const client = {
     watch: false,
     entry: "./src/renderer/index.tsx",
     output: {
-        path: path.resolve(__dirname, "build"),
-        filename: "kruzzrsama.min.js",
+        path: path.resolve(__dirname, "public", "main", "assets"),
+        filename: "main.min.js",
         publicPath: "/"
     },
     module: {
@@ -46,7 +46,7 @@ const client = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'kruzzrsama.min.css',
+            filename: 'main.min.css',
         }),
         new HtmlWebpackPlugin({
             inject: false,

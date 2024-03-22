@@ -1,96 +1,97 @@
 {
-    "name": "desktop-app-boilerplate",
-    "description": "Using TypeScript, Webpack, React, Electron and Express, basic desktop application.",
-    "author": {
-        "name": "KruzzrSama",
-        "email": "kruzzrsama@gmail.com",
-        "url": "https://github.com/KruzzrSama"
+  "name": "desktop-app-boilerplate",
+  "description": "Using TypeScript, Webpack, React, Electron and Express, basic desktop application.",
+  "author": {
+    "name": "KruzzrSama",
+    "email": "kruzzrsama@gmail.com",
+    "url": "https://github.com/KruzzrSama"
+  },
+  "version": "0.0.1",
+  "scripts": {
+    "build": "bun build:main && bun build:api && bun build:renderer",
+    "start:api": "bun public/api/index.js",
+    "start:app": "electron -r babel-register ./public/main/index.js",
+    "build:main": "tsc --project ./src/main/tsconfig.json",
+    "build:api": "webpack --config webpack.config.api.js",
+    "build:renderer": "webpack --config webpack.config.client.js",
+    "package": "bun run build && electron-builder"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.2.2",
+    "axios": "^1.6.8",
+    "chalk": "4.1.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^9.1.0",
+    "react-router": "^6.22.3",
+    "react-router-dom": "^6.22.3",
+    "react-toastify": "^10.0.5",
+    "tslib": "^2.6.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/dotenv-webpack": "^7.0.7",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.30",
+    "@types/react": "^18.2.67",
+    "@types/react-dom": "^18.2.22",
+    "@types/react-helmet": "^6.1.11",
+    "@types/react-router": "^5.1.20",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/webpack-node-externals": "^3.0.4",
+    "babel-register": "^6.26.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^6.10.0",
+    "css-minimizer-webpack-plugin": "^6.0.0",
+    "dotenv": "^16.4.5",
+    "dotenv-webpack": "^8.1.0",
+    "electron": "^29.1.5",
+    "electron-builder": "^24.13.3",
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.8.1",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.3",
+    "typescript-plugin-css-modules": "^5.1.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "build": {
+    "appId": "com.author.appname",
+    "productName": "Artech",
+    "directories": {
+      "buildResources": "public/main",
+      "output": "build"
     },
-    "version": "0.0.1",
-    "scripts": {
-        "build": "bun build:main && bun build:api && bun build:renderer",
-        "start:api": "bun public/api/index.js",
-        "start:app": "electron -r babel-register ./build/index.js",
-        "build:main": "tsc --project ./src/main/tsconfig.json",
-        "build:api": "webpack --config webpack.config.api.js",
-        "build:renderer": "webpack --config webpack.config.client.js",
-        "package": "bun run build && electron-builder"
+    "asar": true,
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "icon-256.ico"
     },
-    "dependencies": {
-        "@reduxjs/toolkit": "^2.2.2",
-        "axios": "^1.6.8",
-        "chalk": "4.1.2",
-        "cors": "^2.8.5",
-        "express": "^4.19.1",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "react-redux": "^9.1.0",
-        "react-router": "^6.22.3",
-        "react-router-dom": "^6.22.3",
-        "react-toastify": "^10.0.5",
-        "tslib": "^2.6.2"
+    "mac": {
+      "target": [
+        "zip",
+        "dmg"
+      ],
+      "icon": "icon-512.icns"
     },
-    "devDependencies": {
-        "@types/cors": "^2.8.17",
-        "@types/dotenv-webpack": "^7.0.7",
-        "@types/express": "^4.17.21",
-        "@types/node": "^20.11.30",
-        "@types/react": "^18.2.67",
-        "@types/react-dom": "^18.2.22",
-        "@types/react-helmet": "^6.1.11",
-        "@types/react-router": "^5.1.20",
-        "@types/react-router-dom": "^5.3.3",
-        "babel-register": "^6.26.0",
-        "copy-webpack-plugin": "^12.0.2",
-        "css-loader": "^6.10.0",
-        "css-minimizer-webpack-plugin": "^6.0.0",
-        "dotenv": "^16.4.5",
-        "dotenv-webpack": "^8.1.0",
-        "electron": "^29.1.5",
-        "electron-builder": "^24.13.3",
-        "html-webpack-plugin": "^5.6.0",
-        "mini-css-extract-plugin": "^2.8.1",
-        "ts-loader": "^9.5.1",
-        "typescript": "^5.4.3",
-        "typescript-plugin-css-modules": "^5.1.0",
-        "webpack": "^5.91.0",
-        "webpack-cli": "^5.1.4",
-        "webpack-node-externals": "^3.0.0"
+    "linux": {
+      "target": [
+        "deb",
+        "tar.gz",
+        "appImage"
+      ],
+      "icon": "icon-512.png"
     },
-    "build": {
-        "appId": "com.author.appname",
-        "productName": "Artech",
-        "directories": {
-            "buildResources": "public/main",
-            "output": "build"
-        },
-        "asar": true,
-        "win": {
-            "target": [
-                "nsis",
-                "portable"
-            ],
-            "icon": "icon-256.ico"
-        },
-        "mac": {
-            "target": [
-                "zip",
-                "dmg"
-            ],
-            "icon": "icon-512.icns"
-        },
-        "linux": {
-            "target": [
-                "deb",
-                "tar.gz",
-                "appImage"
-            ],
-            "icon": "icon-512.png"
-        },
-        "files": [
-            "public/main/**/*",
-            "package.json",
-            "public/main/index.js"
-        ]
-    }
+    "files": [
+      "public/main/**/*",
+      "package.json",
+      "public/main/index.js"
+    ]
+  }
 }

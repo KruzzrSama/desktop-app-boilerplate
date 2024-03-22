@@ -1,0 +1,11 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "outDir": "../../api",
+        "jsx": "react-jsx",
+    },
+    "include": [
+        "./**/*",
+        "../shared/**/*"
+    ]
+}
