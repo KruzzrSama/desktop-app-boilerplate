@@ -1,0 +1,23 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "rootDir": "./src",
+    "baseUrl": "./src",
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": false,
+    "sourceMap": false,
+    "strict": true,
+    "strictNullChecks": false,
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "node_modules",
+    "public",
+    "build",
+  ]
+}
