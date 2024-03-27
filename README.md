@@ -9,7 +9,7 @@ or
 npm install
 ```
 
-if don't using bun
+If you're not using Bun
 
 npm;
 ```json
@@ -20,7 +20,7 @@ npm;
     "build:main": "tsc --project ./src/main/tsconfig.json",
     "build:api": "webpack --config webpack.config.api.js",
     "build:renderer": "webpack --config webpack.config.client.js",
-    "package": "bun run build && electron-builder"
+    "package": "npm run build && electron-builder"
 }
 ```
 

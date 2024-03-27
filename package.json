@@ -6,7 +6,7 @@
     "email": "kruzzrsama@gmail.com",
     "url": "https://github.com/KruzzrSama"
   },
-  "version": "0.0.1",
+  "version": "1.0.2",
   "scripts": {
     "build": "bun build:main && bun build:api && bun build:renderer",
     "start:api": "bun public/api/index.js",
